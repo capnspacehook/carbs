@@ -690,7 +690,6 @@ class CARBS:
             wandb_params = self.config.wandb_params
             if wandb_params.run_id is None:
                 self.wandb_run = wandb.init(
-                    config=self.config.to_dict(),
                     project=wandb_params.project_name,
                     group=wandb_params.group_name,
                     name=wandb_params.run_name,
@@ -698,7 +697,6 @@ class CARBS:
                 )
             else:
                 self.wandb_run = wandb.init(
-                    config=self.config.to_dict(),
                     project=wandb_params.project_name,
                     group=wandb_params.group_name,
                     name=wandb_params.run_name,
